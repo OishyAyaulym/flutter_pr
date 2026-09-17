@@ -36,7 +36,6 @@ class Library {
   List<Book> get booksAfter2010 =>
       _books.where((book) => book.year > 2010).toList();
 
-  // reduce is not used because it cannot start with an empty collection.
   double get averagePages =>
       _books.isEmpty
           ? 0.0
