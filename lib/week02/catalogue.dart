@@ -30,33 +30,23 @@ class Library {
 
   List<Book> get _books => items.whereType<Book>().toList();
 
-  List<String> get everyTitle =>
-      items.map((item) => item.title).toList();
+  List<String> get everyTitle => items.map((item) => item.title).toList();
 
   List<Book> get booksAfter2010 =>
       _books.where((book) => book.year > 2010).toList();
 
-  double get averagePages =>
-      _books.isEmpty
-          ? 0.0
-          : _books.fold<int>(
-        0,
-            (sum, book) => sum + book.pages,
-      ) /
-          _books.length;
+  double get averagePages => _books.isEmpty
+      ? 0.0
+      : _books.fold<int>(0, (sum, book) => sum + book.pages) / _books.length;
 
   Map<String, int> get booksByAuthor => {
     for (final author in authorNames)
-      author: _books
-          .where((book) => book.author.name == author)
-          .length,
+      author: _books.where((book) => book.author.name == author).length,
   };
 
-  Set<String> get authorNames =>
-      _books.map((book) => book.author.name).toSet();
+  Set<String> get authorNames => _books.map((book) => book.author.name).toSet();
 
-  Set<Genre> get genres =>
-      _books.map((book) => book.genre).toSet();
+  Set<Genre> get genres => _books.map((book) => book.genre).toSet();
 
   List<String> get displayList => [
     'CATALOGUE',

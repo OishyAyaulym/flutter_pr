@@ -2,10 +2,7 @@ class Author {
   final String name;
   final String? country;
 
-  const Author({
-    required this.name,
-    this.country,
-  });
+  const Author({required this.name, this.country});
 
   @override
   String toString() => country == null ? name : '$name ($country)';
@@ -31,10 +28,7 @@ abstract class LibraryItem {
   final String title;
   final int year;
 
-  const LibraryItem({
-    required this.title,
-    required this.year,
-  });
+  const LibraryItem({required this.title, required this.year});
 
   String describe();
 
@@ -83,15 +77,14 @@ class Book extends LibraryItem with Borrowable {
     Author? author,
     Genre? genre,
     String? description,
-  }) =>
-      Book(
-        title: title ?? this.title,
-        year: year ?? this.year,
-        pages: pages ?? this.pages,
-        author: author ?? this.author,
-        genre: genre ?? this.genre,
-        description: description ?? this.description,
-      );
+  }) => Book(
+    title: title ?? this.title,
+    year: year ?? this.year,
+    pages: pages ?? this.pages,
+    author: author ?? this.author,
+    genre: genre ?? this.genre,
+    description: description ?? this.description,
+  );
 
   @override
   String describe() => '$title ($year) by $author';
@@ -99,8 +92,8 @@ class Book extends LibraryItem with Borrowable {
   @override
   String toString() =>
       'Book(title: $title, year: $year, pages: $pages, '
-          'author: $author, genre: ${genre.label}, '
-          'description: ${description ?? 'none'})';
+      'author: $author, genre: ${genre.label}, '
+      'description: ${description ?? 'none'})';
 }
 
 class Magazine extends LibraryItem {
@@ -123,10 +116,7 @@ class Ghost implements LibraryItem {
   @override
   final int year;
 
-  const Ghost({
-    required this.title,
-    required this.year,
-  });
+  const Ghost({required this.title, required this.year});
 
   @override
   String describe() => 'A ghost titled "$title" from $year';

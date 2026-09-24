@@ -28,19 +28,10 @@ String describe(ShelfState state) => switch (state) {
 
 ({int count, double avgPages}) statsOf(List<Book> books) {
   if (books.isEmpty) {
-    return (
-    count: 0,
-    avgPages: 0.0,
-    );
+    return (count: 0, avgPages: 0.0);
   }
 
-  final totalPages = books.fold<int>(
-    0,
-        (sum, book) => sum + book.pages,
-  );
+  final totalPages = books.fold<int>(0, (sum, book) => sum + book.pages);
 
-  return (
-  count: books.length,
-  avgPages: totalPages / books.length,
-  );
+  return (count: books.length, avgPages: totalPages / books.length);
 }

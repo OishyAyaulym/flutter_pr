@@ -6,9 +6,7 @@ import 'shelf_state.dart';
 void main() {
   final library = Library();
 
-  final books = rawBooks
-      .map((rawBook) => Book.fromJson(rawBook))
-      .toList();
+  final books = rawBooks.map((rawBook) => Book.fromJson(rawBook)).toList();
 
   for (final book in books) {
     library.add(book);
