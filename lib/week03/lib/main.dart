@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'week03/lib/data.dart';
-import 'week03/lib/info_row.dart';
-import 'week03/lib/profile_header.dart';
+import 'data.dart';
+import 'info_row.dart';
+import 'profile_header.dart';
 
 void main() {
   runApp(const MyApp());
