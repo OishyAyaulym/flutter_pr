@@ -6,7 +6,7 @@ Mobile application built with Flutter for managing campus events, attendees, and
 
 | Phone Light Theme | Phone Dark Theme | Tablet Grid View |
 | :---: | :---: | :---: |
-| ![Phone Light](phone_light.png) | ![Phone Dark](phone_dark.png) | ![Tablet Grid](tablet_grid.png) |
+| ![Phone Light](phone_light.jpg) | ![Phone Dark](phone_dark.jpg) | ![Tablet Grid](tablet_grid.png) |
 
 ## Decisions
 
