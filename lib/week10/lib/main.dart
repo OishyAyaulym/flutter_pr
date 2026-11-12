@@ -4,7 +4,6 @@ import 'students_future_screen.dart';
 import 'countdown_screen.dart';
 
 void main() {
-  // Эксперимент из Level 1 для консоли
   print('A');
   Future.delayed(const Duration(seconds: 2), () => print('B'));
   print('C');

@@ -18,12 +18,12 @@ class _StudentsFutureScreenState extends State<StudentsFutureScreen> {
   void initState() {
     super.initState();
     _api = FakeApi();
-    _future = _api.fetchStudents(); // Создается ровно 1 раз
+    _future = _api.fetchStudents();
   }
 
   void _retry() {
     setState(() {
-      _future = _api.fetchStudents(); // Новый фьючер только при ретрае
+      _future = _api.fetchStudents();
     });
   }
 

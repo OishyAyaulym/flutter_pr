@@ -10,19 +10,16 @@ class CountdownScreen extends StatefulWidget {
 }
 
 class _CountdownScreenState extends State<CountdownScreen> {
-  int _currentIndex = 0; // 0 - StreamBuilder, 1 - Listen with manual cancel
+  int _currentIndex = 0;
 
-  // Версия А: поле для StreamBuilder
   late final Stream<int> _stream = countdown(10);
 
-  // Версия Б: ручная подписка
   int _left = 10;
   late final StreamSubscription<int> _sub;
 
   @override
   void initState() {
     super.initState();
-    // Инициализация ручной подписки для версии Б
     _sub = countdown(10).listen((i) {
       if (mounted) {
         setState(() => _left = i);
@@ -32,7 +29,7 @@ class _CountdownScreenState extends State<CountdownScreen> {
 
   @override
   void dispose() {
-    _sub.cancel(); // Обязательно отменяем во избежание утечки памяти!
+    _sub.cancel();
     super.dispose();
   }
 

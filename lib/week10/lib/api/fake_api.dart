@@ -31,7 +31,6 @@ class FakeApi {
     debugPrint('fetchStudents #$calls');
     await Future.delayed(const Duration(seconds: 2));
 
-    // Каждый третий вызов падает с ошибкой
     if (calls % 3 == 0) {
       throw NoConnectionException();
     }
@@ -42,7 +41,6 @@ class FakeApi {
   Future<void> save(int value) async {
     saveCalls++;
     await Future.delayed(const Duration(seconds: 1));
-    // Каждый второй вызов сохранения падает
     if (saveCalls % 2 == 0) {
       throw StateError('server rejected $value');
     }
